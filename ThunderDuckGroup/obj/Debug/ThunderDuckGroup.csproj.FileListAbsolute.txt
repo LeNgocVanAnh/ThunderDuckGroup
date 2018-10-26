@@ -89,3 +89,7 @@ C:\Users\Yuu2412\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\ThunderDuckGroup
 C:\Users\Yuu2412\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\ThunderDuckGroup\ThunderDuckGroup\obj\Debug\ThunderDuckGroup.csproj.CopyComplete
 C:\Users\Yuu2412\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\ThunderDuckGroup\ThunderDuckGroup\obj\Debug\ThunderDuckGroup.dll
 C:\Users\Yuu2412\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\ThunderDuckGroup\ThunderDuckGroup\obj\Debug\ThunderDuckGroup.pdb
+C:\Users\Yuu2412\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\ThunderDuckGroup\ThunderDuckGroup\bin\EntityFramework.dll
+C:\Users\Yuu2412\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\ThunderDuckGroup\ThunderDuckGroup\bin\EntityFramework.SqlServer.dll
+C:\Users\Yuu2412\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\ThunderDuckGroup\ThunderDuckGroup\bin\EntityFramework.xml
+C:\Users\Yuu2412\Downloads\Microsoft.SkypeApp_kzf8qxf38zg5c!App\ThunderDuckGroup\ThunderDuckGroup\bin\EntityFramework.SqlServer.xml

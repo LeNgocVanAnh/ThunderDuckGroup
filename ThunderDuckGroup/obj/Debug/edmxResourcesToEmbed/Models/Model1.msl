@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ThunderDuckModelStoreContainer" CdmEntityContainer="ThunderDuckEntities">
+    <EntitySetMapping Name="Td_AreaType">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_AreaType">
+        <MappingFragment StoreEntitySet="Td_AreaType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Area1" ColumnName="Area1" />
+          <ScalarProperty Name="Area2" ColumnName="Area2" />
+          <ScalarProperty Name="Area3" ColumnName="Area3" />
+          <ScalarProperty Name="All" ColumnName="All" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_Contact">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_Contact">
+        <MappingFragment StoreEntitySet="Td_Contact">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Hotline" ColumnName="Hotline" />
+          <ScalarProperty Name="Headaddress" ColumnName="Headaddress" />
+          <ScalarProperty Name="OfficeAddress" ColumnName="OfficeAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_Events">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_Events">
+        <MappingFragment StoreEntitySet="Td_Events">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_Images">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_Images">
+        <MappingFragment StoreEntitySet="Td_Images">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="images" ColumnName="images" />
+          <ScalarProperty Name="images1" ColumnName="images1" />
+          <ScalarProperty Name="images2" ColumnName="images2" />
+          <ScalarProperty Name="images3" ColumnName="images3" />
+          <ScalarProperty Name="images4" ColumnName="images4" />
+          <ScalarProperty Name="images5" ColumnName="images5" />
+          <ScalarProperty Name="images6" ColumnName="images6" />
+          <ScalarProperty Name="images7" ColumnName="images7" />
+          <ScalarProperty Name="images8" ColumnName="images8" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_Members">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_Members">
+        <MappingFragment StoreEntitySet="Td_Members">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_News">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_News">
+        <MappingFragment StoreEntitySet="Td_News">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_Slider">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_Slider">
+        <MappingFragment StoreEntitySet="Td_Slider">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Video" ColumnName="Video" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_ThunderDuckType">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_ThunderDuckType">
+        <MappingFragment StoreEntitySet="Td_ThunderDuckType">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Name1" ColumnName="Name1" />
+          <ScalarProperty Name="Name2" ColumnName="Name2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_Tours">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_Tours">
+        <MappingFragment StoreEntitySet="Td_Tours">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_Story">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_Story">
+        <MappingFragment StoreEntitySet="Td_Story">
+          <ScalarProperty Name="Images" ColumnName="Images" />
+          <ScalarProperty Name="Signature" ColumnName="Signature" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
