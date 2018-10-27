@@ -21,6 +21,9 @@
     <Property Name="Hotline" Type="nvarchar(max)" />
     <Property Name="Headaddress" Type="nvarchar" MaxLength="300" />
     <Property Name="OfficeAddress" Type="nvarchar" MaxLength="300" />
+    <Property Name="Phone1" Type="nvarchar(max)" />
+    <Property Name="Email1" Type="nvarchar(max)" />
+    <Property Name="Email2" Type="nvarchar(max)" />
   </EntityType>
   <EntityType Name="Td_Events">
     <Key>
@@ -37,7 +40,6 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="images" Type="nvarchar" MaxLength="50" />
     <Property Name="images1" Type="nvarchar" MaxLength="50" />
     <Property Name="images2" Type="nvarchar" MaxLength="50" />
     <Property Name="images3" Type="nvarchar" MaxLength="50" />
@@ -64,9 +66,8 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar" MaxLength="250" />
-    <Property Name="Description" Type="nvarchar" MaxLength="1000" />
     <Property Name="Images" Type="nvarchar" MaxLength="50" />
-    <Property Name="Subtitle" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
   </EntityType>
   <EntityType Name="Td_Slider">
     <Key>

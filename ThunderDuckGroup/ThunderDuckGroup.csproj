@@ -157,8 +157,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ThunderDuckBrandMaker\BrandMakerWebmaster\HomePageBrandMakerController.cs" />
+    <Compile Include="Controllers\ThunderDuckBrandMaker\BrandMakerWebmaster\ImagesBrandMakerController.cs" />
+    <Compile Include="Controllers\ThunderDuckBrandMaker\BrandMakerWebmaster\NewsBrandMakerController.cs" />
+    <Compile Include="Controllers\ThunderDuckBrandMaker\BrandMakerWebmaster\StoryBrandMakerController.cs" />
     <Compile Include="Controllers\ThunderDuckBrandMaker\HomeBrandMakerController.cs" />
     <Compile Include="Controllers\ThunderDuckConstruction\HomeConstructionController.cs" />
+    <Compile Include="Controllers\Webmaster\ContactController.cs" />
     <Compile Include="Controllers\Webmaster\WebmasterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -883,6 +888,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Webmaster\icon\if_f-cross_256_282471.png" />
+    <Content Include="Images\Webmaster\logo\logoa3.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -972,20 +979,29 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\ThunderDuckBrandMaker\LayoutBrandMaker.cshtml" />
-    <Content Include="Views\HomeBrandMaker\IndexBrandMaker.cshtml" />
+    <Content Include="Views\Shared\ThunderDuckBrandMaker\_LayoutBrandMaker.cshtml" />
     <Content Include="Views\Shared\ThunderDuckConstruction\LayoutConstruction.cshtml" />
     <Content Include="Views\HomeConstruction\IndexConstruction.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutWebmaster.cshtml" />
     <Content Include="Views\Webmaster\Index.cshtml" />
     <Content Include="Views\Webmaster\Login.cshtml" />
+    <Content Include="Views\HomePageBrandMaker\Edit.cshtml" />
+    <Content Include="Views\Contact\Edit.cshtml" />
+    <Content Include="Views\ImagesBrandMaker\Edit.cshtml" />
+    <Content Include="Views\HomeBrandMaker\IndexBrandMaker.cshtml" />
+    <Content Include="Views\NewsBrandMaker\List.cshtml" />
+    <Content Include="Views\NewsBrandMaker\Create.cshtml" />
+    <Content Include="Views\NewsBrandMaker\Edit.cshtml" />
+    <Content Include="Views\StoryBrandMaker\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\ThunderDuckBrandMaker\upload\" />
     <Folder Include="Content\ThunderDuckConstruction\upload\" />
     <Folder Include="Content\ThunderDuckCosmetic\" />
+    <Folder Include="Images\ThunderDuckGroup\imageHome\" />
+    <Folder Include="Images\ThunderDuckGroup\imageNew\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

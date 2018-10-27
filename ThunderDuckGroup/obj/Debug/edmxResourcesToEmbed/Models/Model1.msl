@@ -16,6 +16,9 @@
     <EntitySetMapping Name="Td_Contact">
       <EntityTypeMapping TypeName="ThunderDuckModel.Td_Contact">
         <MappingFragment StoreEntitySet="Td_Contact">
+          <ScalarProperty Name="Email2" ColumnName="Email2" />
+          <ScalarProperty Name="Email1" ColumnName="Email1" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
@@ -36,23 +39,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Td_Images">
-      <EntityTypeMapping TypeName="ThunderDuckModel.Td_Images">
-        <MappingFragment StoreEntitySet="Td_Images">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="images" ColumnName="images" />
-          <ScalarProperty Name="images1" ColumnName="images1" />
-          <ScalarProperty Name="images2" ColumnName="images2" />
-          <ScalarProperty Name="images3" ColumnName="images3" />
-          <ScalarProperty Name="images4" ColumnName="images4" />
-          <ScalarProperty Name="images5" ColumnName="images5" />
-          <ScalarProperty Name="images6" ColumnName="images6" />
-          <ScalarProperty Name="images7" ColumnName="images7" />
-          <ScalarProperty Name="images8" ColumnName="images8" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Td_Members">
       <EntityTypeMapping TypeName="ThunderDuckModel.Td_Members">
         <MappingFragment StoreEntitySet="Td_Members">
@@ -61,17 +47,6 @@
           <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="Images" ColumnName="Images" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Td_News">
-      <EntityTypeMapping TypeName="ThunderDuckModel.Td_News">
-        <MappingFragment StoreEntitySet="Td_News">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Images" ColumnName="Images" />
-          <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -115,6 +90,32 @@
           <ScalarProperty Name="Images" ColumnName="Images" />
           <ScalarProperty Name="Signature" ColumnName="Signature" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_Images">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_Images">
+        <MappingFragment StoreEntitySet="Td_Images">
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="images8" ColumnName="images8" />
+          <ScalarProperty Name="images7" ColumnName="images7" />
+          <ScalarProperty Name="images6" ColumnName="images6" />
+          <ScalarProperty Name="images5" ColumnName="images5" />
+          <ScalarProperty Name="images4" ColumnName="images4" />
+          <ScalarProperty Name="images3" ColumnName="images3" />
+          <ScalarProperty Name="images2" ColumnName="images2" />
+          <ScalarProperty Name="images1" ColumnName="images1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Td_News">
+      <EntityTypeMapping TypeName="ThunderDuckModel.Td_News">
+        <MappingFragment StoreEntitySet="Td_News">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Images" ColumnName="Images" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>

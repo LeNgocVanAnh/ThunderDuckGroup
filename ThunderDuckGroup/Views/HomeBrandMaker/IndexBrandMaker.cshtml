@@ -1,9 +1,8 @@
-﻿
+﻿@model IEnumerable<ThunderDuckGroup.Models.HomeMaster>
 @{
     ViewBag.Title = "IndexBrandMaker";
-    Layout = "~/Views/Shared/ThunderDuckBrandMaker/LayoutBrandMaker.cshtml";
+    Layout = "~/Views/Shared/ThunderDuckBrandMaker/_LayoutBrandMaker.cshtml";
 }
-
 
 <!--ABOUT AREA-->
 <section class="about-area section-padding" id="about">
@@ -39,7 +38,6 @@
     </div>
 </section>
 <!--ABOUT AREA END-->
-
 <!--SPEACIAL PROMOTIONS AREA-->
 <section class="promotions-area section-padding" id="promotion">
     <div class="promotion-area-bg" data-stellar-background-ratio="0.6"></div>
@@ -81,7 +79,6 @@
     </div>
 </section>
 <!--SPEACIAL PROMOTIONS AREA END-->
-
 <!--MENUS AREA-->
 <section class="menus-area section-padding" id="menu">
     <div class="container wow fadeIn">
@@ -185,7 +182,6 @@
     </div>
 </section>
 <!--MENUS AREA END-->
-
 <!--TEAM AREA-->
 <section class="team-area section-padding" id="team">
     <div class="container wow fadeIn">
@@ -240,7 +236,6 @@
     </div>
 </section>
 <!--TEAM AREA END-->
-
 <!--BLOG AREA-->
 <section class="blog-area section-padding" id="blog">
     <div class="blog-area-bg" data-stellar-background-ratio="0.6"></div>
@@ -253,42 +248,21 @@
             </div>
         </div>
         <div class="row post-slider">
-            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                <div class="single-post text-center">
-                    <div class="blog-post-img ">
-                        <img src="~/Content/ThunderDuckBrandMaker/img/blog/blog3.jpg" alt="">
-                    </div>
-                    <div class="post-details">
-                        <h3><a href="news1.html">Can thiệp quyết định mua hàng, lời nào cho Marketing?</a></h3>
-                        <p>Vâng, 5 bước đưa ra 1 quyết định mua hàng và quyết định có quay lại với bạn sau khi đã sử dụng sản phẩm, hoặc dịch vụ của bạn không!</p>
+            @foreach (var item in Model.FirstOrDefault().newss)
+            {
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                    <div class="single-post text-center">
+                        <div class="blog-post-img ">
+                            <img src="~/Images/ThunderDuckGroup/imageNew/@item.Images" alt="">
+                        </div>
+                        <div class="post-details">
+                            <h3><a href="news1.html">@item.Title</a></h3>
+                            <p>@item.Description</p>
 
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                <div class="single-post text-center">
-                    <div class="blog-post-img ">
-                        <img src="~/Content/ThunderDuckBrandMaker/img/blog/blog1.jpg" alt="">
-                    </div>
-                    <div class="post-details">
-                        <h3><a href="news2.html">Trải nghiệm mô hình du lịch mới tại Sa Pa</a></h3>
-                        <p>Sau một thời gian gây dựng mô hình du lịch sinh thái, vườn dâu tây của gia đình anh Trần Tuấn Nghĩa, ở huyện Sa Pa đã thu hút nhiều du khách.</p>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-                <div class="single-post text-center">
-                    <div class="blog-post-img ">
-                        <img src="~/Content/ThunderDuckBrandMaker/img/blog/blog2.jpg" alt="">
-                    </div>
-                    <div class="post-details">
-                        <h3><a href="news3.html">Lên Đà Lạt một ngày làm nông dân thu hoạch dâu tây</a></h3>
-                        <p>Đến Đà Lạt, một trải nghiệm rất thú vị mà bất kỳ khách du lịch nào cũng không thể bỏ qua là ghé tham quan và thu hoạch dâu tươi ngay tại vườn.</p>
-
-                    </div>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </section>
@@ -300,60 +274,92 @@
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <div class="area-title text-center">
-                    <h2>Hình Ảnh</h2>
+                    <h2>@Model.FirstOrDefault().img.FirstOrDefault().Title</h2>
                 </div>
-            </div>
-
-            <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
-                <div class="container-cosmetic">
-                    <div class="image-frame">
-                        <img src="~/Content/ThunderDuckBrandMaker/img/promotions/promo1.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">promo1</div>
+                <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                    <div class="container-cosmetic">
+                        <div class="image-frame">
+                            <img src="/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().img.FirstOrDefault().images1" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="text">promo1</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
-                <div class="container-cosmetic">
-                    <div class="image-frame">
-                        <img src="~/Content/ThunderDuckBrandMaker/img/promotions/promo3.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">promo2</div>
+                <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                    <div class="container-cosmetic">
+                        <div class="image-frame">
+                            <img src="/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().img.FirstOrDefault().images2" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="text">promo2</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
-                <div class="container-cosmetic">
-                    <div class="image-frame">
-                        <img src="~/Content/ThunderDuckBrandMaker/img/promotions/promo2.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">promo3</div>
+                <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                    <div class="container-cosmetic">
+                        <div class="image-frame">
+                            <img src="/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().img.FirstOrDefault().images3" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="text">promo3</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
-                <div class="container-cosmetic">
-                    <div class="image-frame">
-                        <img src="~/Content/ThunderDuckBrandMaker/img/promotions/promo1.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">promo4</div>
+                <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
+                    <div class="container-cosmetic">
+                        <div class="image-frame">
+                            <img src="/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().img.FirstOrDefault().images4" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="text">promo4</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3">
-                <div class="container-cosmetic">
-                    <div class="image-frame">
-                        <img src="~/Content/ThunderDuckBrandMaker/img/promotions/promo3.jpg" alt="Avatar" class="image">
-                        <div class="overlay">
-                            <div class="text">promo5</div>
+                <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3" style="margin-top: 30px">
+                    <div class="container-cosmetic">
+                        <div class="image-frame">
+                            <img src="/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().img.FirstOrDefault().images5" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="text">promo5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3" style="margin-top: 30px">
+                    <div class="container-cosmetic">
+                        <div class="image-frame">
+                            <img src="/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().img.FirstOrDefault().images6" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="text">promo5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3" style="margin-top: 30px">
+                    <div class="container-cosmetic">
+                        <div class="image-frame">
+                            <img src="/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().img.FirstOrDefault().images7" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="text">promo5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-lg-3 col-sm-3 col-xs-3" style="margin-top: 30px">
+                    <div class="container-cosmetic">
+                        <div class="image-frame">
+                            <img src="/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().img.FirstOrDefault().images8" alt="Avatar" class="image">
+                            <div class="overlay">
+                                <div class="text">promo5</div>
+                            </div>
                         </div>
                     </div>
                 </div>

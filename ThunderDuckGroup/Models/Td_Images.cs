@@ -15,7 +15,6 @@ namespace ThunderDuckGroup.Models
     public partial class Td_Images
     {
         public int id { get; set; }
-        public string images { get; set; }
         public string images1 { get; set; }
         public string images2 { get; set; }
         public string images3 { get; set; }

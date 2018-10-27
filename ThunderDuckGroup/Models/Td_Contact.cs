@@ -20,5 +20,8 @@ namespace ThunderDuckGroup.Models
         public string Hotline { get; set; }
         public string Headaddress { get; set; }
         public string OfficeAddress { get; set; }
+        public string Phone1 { get; set; }
+        public string Email1 { get; set; }
+        public string Email2 { get; set; }
     }
 }

@@ -1,7 +1,14 @@
-﻿@model IEnumerable<ThunderDuckGroup.Models.HomeMaster>  
+﻿
     @using ThunderDuckGroup.Models
 @{ 
     ThunderDuckEntities db = new ThunderDuckEntities();
+    HomeMaster home = new HomeMaster();
+    var sli = db.Td_Slider.Where(st => st.id == 1);
+    var con = db.Td_Contact.Where(st => st.id == 1);
+    home.sli = sli;
+    home.con = con;
+    List<HomeMaster> lst = new List<HomeMaster>();
+    lst.Add(home);
 }
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -67,7 +74,7 @@
     <header class="top-area" id="home">
         <div class="top-area-bg video-bg">
 
-            <a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=P_q3BdrFsLI',containment:'#home', showControls:false, autoPlay:true, zoom:0, loop:true, mute:false, startAt:0, opacity:1, quality:'default'}"></a>
+            <a class="player" data-property="{videoURL:'@lst.FirstOrDefault().sli.FirstOrDefault().Video',containment:'#home', showControls:false, autoPlay:true, zoom:0, loop:true, mute:false, startAt:0, opacity:1, quality:'default'}"></a>
         </div>
         <div class="header-top-area">
             <div class="top-bar">
@@ -75,8 +82,8 @@
                     <div class="row">
                         <div class="col-md-7 col-lg-8 col-sm-8">
                             <div class="call-to-action">
-                                <p><i class="fa fa-envelope-o"></i>Email: <a href="mailto:info@thunderduck.com.vn">info@thunderduck.com.vn</a></p>
-                                <p><i class="fa fa-phone"></i>Điện Thoại: <a href="tel:+840902417744">+84 961 404 441</a></p>
+                                <p><i class="fa fa-envelope-o"></i>Email: <a>@lst.FirstOrDefault().sli.FirstOrDefault().Email</a></p>
+                                <p><i class="fa fa-phone"></i>Điện Thoại: <a>@lst.FirstOrDefault().sli.FirstOrDefault().Phone</a></p>
                             </div>
                         </div>
                         <div class="col-md-5 col-lg-4 col-sm-4">
@@ -108,8 +115,8 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="../index.html" class="navbar-brand"><img src="~/Content/ThunderDuckBrandMaker/img/logo-main3.png" alt="logo"></a>
-                            <a href="../index.html" class="navbar-brand white"><img src="~/Content/ThunderDuckBrandMaker/img/logo-main3.png" alt="logo"></a>
+                            <a href="/homebrandmaker/indexbrandmaker" class="navbar-brand"><img src="~/Images/ThunderDuckGroup/imageHome/@lst.FirstOrDefault().sli.FirstOrDefault().Logo" alt="logo"></a>
+                            <a href="/homebrandmaker/indexbrandmaker" class="navbar-brand white"><img src="~/Images/ThunderDuckGroup/imageHome/@lst.FirstOrDefault().sli.FirstOrDefault().Logo" alt="logo"></a>
                         </div>
                         <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
 
@@ -136,13 +143,10 @@
                 <div class="row">
                     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                         <div class="welcome-text">
-                            <h2>Chào mừng bạn đến với</h2>
+                            <h2>@lst.FirstOrDefault().sli.FirstOrDefault().Title</h2>
                             <h1 class="cd-headline clip is-full-width">
-                                <span class="hero-text">THUNDER DUCK</span>
                                 <span class="cd-words-wrapper">
-                                    <b class="is-visible">Brands Maker</b>
-                                    <b>Sự kiện</b>
-                                    <b>Team building</b>
+                                    <b class="is-visible">@lst.FirstOrDefault().sli.FirstOrDefault().Description</b>
                                 </span>
                             </h1>
 
@@ -166,11 +170,11 @@
                             <a href="#"><img src="~/Content/ThunderDuckBrandMaker/img/logo-main3.png" alt=""></a>
                         </div>
                         <div class="footer-address">
-                            <p>Trụ sở: Số 4, Nguyễn Đình Chiểu, Phường Đa Kao, Quận 1, Thành Phố Hồ Chí Minh</p>
-                            <p>Văn phòng giao dịch: Số 88, Song Hành, Phường An Phú, Quận 2, Thành Phố Hồ Chí Minh</p>
-                            <p>Email: <a href="mailto:admin@thunderduck.com.vn">admin@thunderduck.com.vn</a> - <a href="mailto:jasmine.doan@thunderduck.com.vn">jasmine.doan@thunderduck.com.vn</a> - <a href="mailto:lucynguyen@thunderduck.com.vn">lucynguyen@thunderduck.com.vn</a> - </p>
-                            <p>Điện Thoại: <a href="callto:+8402866507678">(+8428) 6650 7678</a> - <a href="callto:+840981406778">+84 981 406 778</a></p>
-                            <p>Hotline: <a href="callto:+840961404441">+84 961 404 441</a></p>
+                            <p>Trụ sợ: <a>@lst.FirstOrDefault().con.FirstOrDefault().Headaddress</a></p>
+                            <p>Văn phòng chính: <a>@lst.FirstOrDefault().con.FirstOrDefault().OfficeAddress</a></p>
+                            <p>Email: <a href="@lst.FirstOrDefault().con.FirstOrDefault().Email">@lst.FirstOrDefault().con.FirstOrDefault().Email</a> - <a href="@lst.FirstOrDefault().con.FirstOrDefault().Email1">@lst.FirstOrDefault().con.FirstOrDefault().Email1</a> - <a href="@lst.FirstOrDefault().con.FirstOrDefault().Email2">@lst.FirstOrDefault().con.FirstOrDefault().Email2</a> - </p>
+                            <p>Điện Thoại: <a href="@lst.FirstOrDefault().con.FirstOrDefault().Phone">@lst.FirstOrDefault().con.FirstOrDefault().Phone</a> - <a href="@lst.FirstOrDefault().con.FirstOrDefault().Phone1">@lst.FirstOrDefault().con.FirstOrDefault().Phone1</a></p>
+                            <p>Hotline: <a href="@lst.FirstOrDefault().con.FirstOrDefault().Hotline">@lst.FirstOrDefault().con.FirstOrDefault().Hotline</a></p>
                         </div>
                         <div class="footer-social-bookmark">
                             <ul>

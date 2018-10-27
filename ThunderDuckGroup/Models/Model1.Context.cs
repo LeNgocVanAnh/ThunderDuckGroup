@@ -28,12 +28,12 @@ namespace ThunderDuckGroup.Models
         public virtual DbSet<Td_AreaType> Td_AreaType { get; set; }
         public virtual DbSet<Td_Contact> Td_Contact { get; set; }
         public virtual DbSet<Td_Events> Td_Events { get; set; }
-        public virtual DbSet<Td_Images> Td_Images { get; set; }
         public virtual DbSet<Td_Members> Td_Members { get; set; }
-        public virtual DbSet<Td_News> Td_News { get; set; }
         public virtual DbSet<Td_Slider> Td_Slider { get; set; }
         public virtual DbSet<Td_ThunderDuckType> Td_ThunderDuckType { get; set; }
         public virtual DbSet<Td_Tours> Td_Tours { get; set; }
         public virtual DbSet<Td_Story> Td_Story { get; set; }
+        public virtual DbSet<Td_Images> Td_Images { get; set; }
+        public virtual DbSet<Td_News> Td_News { get; set; }
     }
 }
