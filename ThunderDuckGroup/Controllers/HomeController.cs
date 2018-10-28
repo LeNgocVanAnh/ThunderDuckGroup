@@ -13,7 +13,7 @@ namespace ThunderDuckGroup.Controllers
         {
            List<HomeMaster> lst = new List<HomeMaster>();
             HomeMaster home = new HomeMaster();
-            var contact = db.Td_Contact.Where(st => st.id == 1);
+            var contact = db.Td_BrandMaker_Contact.Where(st => st.id == 1);
             home.con = contact;
             lst.Add(home);
             return View(lst);

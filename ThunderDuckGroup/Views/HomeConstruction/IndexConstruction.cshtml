@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<ThunderDuckGroup.Models.ConMaster>
 @{
     ViewBag.Title = "IndexConstruction";
     Layout = "~/Views/Shared/ThunderDuckConstruction/LayoutConstruction.cshtml";
@@ -6,33 +6,28 @@
 
 
 <!--ABOUT AREA-->
-<section class="about-area section-padding" id="about">
+<section class="about-area section-padding" id="about" style="background: url(../../Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().stor.FirstOrDefault().Images">
     <div class="container wow fadeIn">
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <div class="area-title text-center">
-                    <h2>Câu chuyện của chúng tôi</h2>
+                    <h2>@Model.FirstOrDefault().stor.FirstOrDefault().Title</h2>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                 <div class="about-content">
-                    <p><span class="big-text">H</span>thêm nội dung mới </p>
+                    <p>@Model.FirstOrDefault().stor.FirstOrDefault().Description</p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                 <div class="right-about-content">
-                    <p>
-                        lối cho hai cô gái bước vào hành trình cuộc đời, những ngã rẽ của sự nghiệp chỉ với 2 cô gái cho 3 ngành nghề :<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1. Tư Vấn Thiết Kế, Thi Công Xây Dựng<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2. Events - Marketing<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3. Sản Xuất -  Nhập Khẩu - Phân Phối Hoá Mỹ Phẩm<br>
-                        CHÚ VỊT SẤM SÉT - THUNDER DUCK GROUP
+                    <p>@Model.FirstOrDefault().stor.FirstOrDefault().Description1
                     </p>
                 </div>
             </div>
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <div class="about-author-sign text-center">
-                    <img src="~/Content/ThunderDuckConstruction/img/about/signature.png" alt="">
+                    <img src="/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().stor.FirstOrDefault().Signature" alt="">
                 </div>
             </div>
         </div>
@@ -196,72 +191,19 @@
             </div>
 
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 team-slider">
-
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="container-cosmetic">
-                        <div class="image-frame">
-                            <img src="~/Content/ThunderDuckConstruction/img/construction/3.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">Công trình văn phòng</div>
+                @foreach (var item in Model.FirstOrDefault().ima)
+                {
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                        <div class="container-cosmetic">
+                            <div class="image-frame">
+                                <img src="~/Images/ThunderDuckGroup/imageHome/@item.Images" alt="Avatar" class="image">
+                                <div class="overlay">
+                                    <div class="text">@item.Title</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="container-cosmetic">
-                        <div class="image-frame">
-                            <img src="~/Content/ThunderDuckConstruction/img/construction/2.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">Công trình nhà ở</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="container-cosmetic">
-                        <div class="image-frame">
-                            <img src="~/Content/ThunderDuckConstruction/img/construction/4.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">góc vui chơi</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="container-cosmetic">
-                        <div class="image-frame">
-                            <img src="~/Content/ThunderDuckConstruction/img/construction/3.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">ngày mới</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="container-cosmetic">
-                        <div class="image-frame">
-                            <img src="~/Content/ThunderDuckConstruction/img/construction/2.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">trắng đen</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <div class="container-cosmetic">
-                        <div class="image-frame">
-                            <img src="~/Content/ThunderDuckConstruction/img/construction/1.jpg" alt="Avatar" class="image">
-                            <div class="overlay">
-                                <div class="text">tương phản</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>

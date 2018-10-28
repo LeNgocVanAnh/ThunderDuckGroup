@@ -15,7 +15,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
         {
             if (Session["Authentication"] != null)
             {
-                var lst = db.Td_News.ToList();
+                var lst = db.Td_BrandMaker_News.ToList();
                 return View(lst);
             }
             else
@@ -28,7 +28,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
         {
             if (Session["Authentication"] != null)
             {
-                var lst = db.Td_News.ToList();
+                var lst = db.Td_BrandMaker_News.ToList();
                 return View(lst);
             }
             else
@@ -55,17 +55,17 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
                     }
                 }
                
-                var ls = new Td_News();
+                var ls = new Td_BrandMaker_News();
                 ls.Title = title;
                 ls.Description = des;
                 if (Images != "")
                 {
                     ls.Images = Images;
                 }
-                db.Td_News.Add(ls);
+                db.Td_BrandMaker_News.Add(ls);
                 db.SaveChanges();
 
-                return RedirectToAction("List", "NewsBrandMaker");
+                return RedirectToAction("List", "TourBrandMaker");
             }
             else
             {
@@ -75,7 +75,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
 
         public ActionResult Edit(int id)
         {
-            var nw1 = db.Td_News.ToList();
+            var nw1 = db.Td_BrandMaker_News.ToList();
             HomeMaster data = new HomeMaster();
             List<HomeMaster> ls = new List<HomeMaster>();
             data.newss = nw1;
@@ -101,7 +101,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
                         Images += fname;
                     }
                 }
-                var ls = db.Td_News.Find(id);
+                var ls = db.Td_BrandMaker_News.Find(id);
                 ls.Title = title;
                 ls.Description = des;
                 if (Images != "")
@@ -124,7 +124,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
         {
             if (Session["Authentication"] != null)
             {
-                var news = db.Td_News.Find(id);
+                var news = db.Td_BrandMaker_News.Find(id);
                 db.Entry(news).State = System.Data.Entity.EntityState.Deleted;
                 db.SaveChanges();
                 return RedirectToAction("List");

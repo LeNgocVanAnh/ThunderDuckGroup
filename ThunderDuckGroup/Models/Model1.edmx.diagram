@@ -5,16 +5,23 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7b6588a08c5247a39540ff511c55111d" Name="Diagram1">
-        <EntityTypeShape EntityType="ThunderDuckModel.Td_AreaType" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThunderDuckModel.Td_Contact" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThunderDuckModel.Td_Events" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThunderDuckModel.Td_Members" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThunderDuckModel.Td_Slider" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThunderDuckModel.Td_ThunderDuckType" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThunderDuckModel.Td_Tours" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ThunderDuckModel.Td_Story" Width="1.5" PointX="5.375" PointY="7.75" />
-        <EntityTypeShape EntityType="ThunderDuckModel.Td_Images" Width="1.5" PointX="7.375" PointY="4.75" />
-        <EntityTypeShape EntityType="ThunderDuckModel.Td_News" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_BrandMaker_AreaType" Width="1.5" PointX="9.75" PointY="6.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_BrandMaker_Contact" Width="1.5" PointX="9.75" PointY="9.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_BrandMaker_Events" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_BrandMaker_Images" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_BrandMaker_Members" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_BrandMaker_News" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_BrandMaker_Slider" Width="1.5" PointX="11.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_BrandMaker_Story" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_BrandMaker_ThunderDuckType" Width="1.5" PointX="11.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_BrandMaker_Tours" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_Construction_Construction" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_Construction_Contact" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_Construction_Member" Width="3.375" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_Construction_New" Width="2.875" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_Construction_Slider" Width="1.5" PointX="12.375" PointY="10.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_Construction_Images" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="ThunderDuckModel.Td_Constrution_Story" Width="1.5" PointX="5.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

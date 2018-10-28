@@ -5,18 +5,14 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ThunderDuckModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="Td_AreaType">
+        <EntityType Name="Td_BrandMaker_AreaType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Area" Type="int" />
-          <Property Name="Area1" Type="int" />
-          <Property Name="Area2" Type="int" />
-          <Property Name="Area3" Type="int" />
-          <Property Name="All" Type="int" />
+          <Property Name="Typer" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Td_Contact">
+        <EntityType Name="Td_BrandMaker_Contact">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -30,7 +26,7 @@
           <Property Name="Email1" Type="nvarchar(max)" />
           <Property Name="Email2" Type="nvarchar(max)" />
         </EntityType>
-        <EntityType Name="Td_Events">
+        <EntityType Name="Td_BrandMaker_Events">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -40,7 +36,7 @@
           <Property Name="Description" Type="nvarchar" MaxLength="1000" />
           <Property Name="Images" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Td_Images">
+        <EntityType Name="Td_BrandMaker_Images">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -55,17 +51,16 @@
           <Property Name="images8" Type="nvarchar" MaxLength="50" />
           <Property Name="Title" Type="nvarchar" MaxLength="150" />
         </EntityType>
-        <EntityType Name="Td_Members">
+        <EntityType Name="Td_BrandMaker_Members">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="150" />
           <Property Name="Subtitle" Type="nvarchar" MaxLength="200" />
-          <Property Name="Description" Type="nvarchar" MaxLength="200" />
           <Property Name="Images" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Td_News">
+        <EntityType Name="Td_BrandMaker_News">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -74,7 +69,7 @@
           <Property Name="Images" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="300" />
         </EntityType>
-        <EntityType Name="Td_Slider">
+        <EntityType Name="Td_BrandMaker_Slider">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -86,63 +81,162 @@
           <Property Name="Phone" Type="nvarchar" MaxLength="50" />
           <Property Name="Logo" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Td_Story">
+        <EntityType Name="Td_BrandMaker_Story">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="100" />
-          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="Signature" Type="nvarchar" MaxLength="50" />
           <Property Name="Images" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description1" Type="nvarchar" MaxLength="500" />
         </EntityType>
-        <EntityType Name="Td_ThunderDuckType">
+        <EntityType Name="Td_BrandMaker_ThunderDuckType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="int" />
-          <Property Name="Name1" Type="int" />
-          <Property Name="Name2" Type="int" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Td_Tours">
+        <EntityType Name="Td_BrandMaker_Tours">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="50" />
-          <Property Name="Subtitle" Type="nvarchar" MaxLength="50" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Images" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Td_Construction_Construction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Images" Type="nvarchar" MaxLength="50" />
+          <Property Name="Images21" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Td_Construction_Contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HeadAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="OfficeAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Email1" Type="nvarchar(max)" />
+          <Property Name="Email2" Type="nvarchar(max)" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Phone1" Type="nvarchar(max)" />
+          <Property Name="Hotline" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Td_Construction_Images">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Images" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Td_Construction_Member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subtitle" Type="nvarchar" MaxLength="200" />
+          <Property Name="Images" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Td_Construction_New">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="Images" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Td_Construction_Slider">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Logo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subtitle" Type="nvarchar" MaxLength="100" />
+          <Property Name="Images" Type="nvarchar" MaxLength="50" />
+          <Property Name="Images1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Images2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subtitle1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subtitle2" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Td_Constrution_Story">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Signature" Type="nvarchar" MaxLength="50" />
+          <Property Name="Images" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description1" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityContainer Name="ThunderDuckModelStoreContainer">
-          <EntitySet Name="Td_AreaType" EntityType="Self.Td_AreaType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Td_Contact" EntityType="Self.Td_Contact" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Td_Events" EntityType="Self.Td_Events" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Td_Images" EntityType="Self.Td_Images" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Td_Members" EntityType="Self.Td_Members" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Td_News" EntityType="Self.Td_News" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Td_Slider" EntityType="Self.Td_Slider" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Td_Story" EntityType="Self.Td_Story" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Td_ThunderDuckType" EntityType="Self.Td_ThunderDuckType" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Td_Tours" EntityType="Self.Td_Tours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_BrandMaker_AreaType" EntityType="Self.Td_BrandMaker_AreaType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_BrandMaker_Contact" EntityType="Self.Td_BrandMaker_Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_BrandMaker_Events" EntityType="Self.Td_BrandMaker_Events" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_BrandMaker_Images" EntityType="Self.Td_BrandMaker_Images" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_BrandMaker_Members" EntityType="Self.Td_BrandMaker_Members" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_BrandMaker_News" EntityType="Self.Td_BrandMaker_News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_BrandMaker_Slider" EntityType="Self.Td_BrandMaker_Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_BrandMaker_Story" EntityType="Self.Td_BrandMaker_Story" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_BrandMaker_ThunderDuckType" EntityType="Self.Td_BrandMaker_ThunderDuckType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_BrandMaker_Tours" EntityType="Self.Td_BrandMaker_Tours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_Construction_Construction" EntityType="Self.Td_Construction_Construction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_Construction_Contact" EntityType="Self.Td_Construction_Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_Construction_Images" EntityType="Self.Td_Construction_Images" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_Construction_Member" EntityType="Self.Td_Construction_Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_Construction_New" EntityType="Self.Td_Construction_New" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_Construction_Slider" EntityType="Self.Td_Construction_Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Td_Constrution_Story" EntityType="Self.Td_Constrution_Story" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ThunderDuckModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Td_AreaType">
+        <EntityContainer Name="ThunderDuckEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Td_BrandMaker_AreaType" EntityType="ThunderDuckModel.Td_BrandMaker_AreaType" />
+          <EntitySet Name="Td_BrandMaker_Contact" EntityType="ThunderDuckModel.Td_BrandMaker_Contact" />
+          <EntitySet Name="Td_BrandMaker_Events" EntityType="ThunderDuckModel.Td_BrandMaker_Events" />
+          <EntitySet Name="Td_BrandMaker_Images" EntityType="ThunderDuckModel.Td_BrandMaker_Images" />
+          <EntitySet Name="Td_BrandMaker_Members" EntityType="ThunderDuckModel.Td_BrandMaker_Members" />
+          <EntitySet Name="Td_BrandMaker_News" EntityType="ThunderDuckModel.Td_BrandMaker_News" />
+          <EntitySet Name="Td_BrandMaker_Slider" EntityType="ThunderDuckModel.Td_BrandMaker_Slider" />
+          <EntitySet Name="Td_BrandMaker_Story" EntityType="ThunderDuckModel.Td_BrandMaker_Story" />
+          <EntitySet Name="Td_BrandMaker_ThunderDuckType" EntityType="ThunderDuckModel.Td_BrandMaker_ThunderDuckType" />
+          <EntitySet Name="Td_BrandMaker_Tours" EntityType="ThunderDuckModel.Td_BrandMaker_Tours" />
+          <EntitySet Name="Td_Construction_Construction" EntityType="ThunderDuckModel.Td_Construction_Construction" />
+          <EntitySet Name="Td_Construction_Contact" EntityType="ThunderDuckModel.Td_Construction_Contact" />
+          <EntitySet Name="Td_Construction_Member" EntityType="ThunderDuckModel.Td_Construction_Member" />
+          <EntitySet Name="Td_Construction_New" EntityType="ThunderDuckModel.Td_Construction_New" />
+          <EntitySet Name="Td_Construction_Slider" EntityType="ThunderDuckModel.Td_Construction_Slider" />
+          <EntitySet Name="Td_Construction_Images" EntityType="ThunderDuckModel.Td_Construction_Images" />
+          <EntitySet Name="Td_Constrution_Story" EntityType="ThunderDuckModel.Td_Constrution_Story" />
+        </EntityContainer>
+        <EntityType Name="Td_BrandMaker_AreaType">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Area" Type="Int32" />
-          <Property Name="Area1" Type="Int32" />
-          <Property Name="Area2" Type="Int32" />
-          <Property Name="Area3" Type="Int32" />
-          <Property Name="All" Type="Int32" />
+          <Property Name="Typer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Td_Contact">
+        <EntityType Name="Td_BrandMaker_Contact">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -156,7 +250,7 @@
           <Property Name="Email1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Email2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Td_Events">
+        <EntityType Name="Td_BrandMaker_Events">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -166,70 +260,7 @@
           <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Td_Members">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Subtitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Td_Slider">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Video" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Logo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Td_ThunderDuckType">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="Int32" />
-          <Property Name="Name1" Type="Int32" />
-          <Property Name="Name2" Type="Int32" />
-        </EntityType>
-        <EntityType Name="Td_Tours">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Subtitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityContainer Name="ThunderDuckEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Td_AreaType" EntityType="Self.Td_AreaType" />
-          <EntitySet Name="Td_Contact" EntityType="Self.Td_Contact" />
-          <EntitySet Name="Td_Events" EntityType="Self.Td_Events" />
-          <EntitySet Name="Td_Members" EntityType="Self.Td_Members" />
-          <EntitySet Name="Td_Slider" EntityType="Self.Td_Slider" />
-          <EntitySet Name="Td_ThunderDuckType" EntityType="Self.Td_ThunderDuckType" />
-          <EntitySet Name="Td_Tours" EntityType="Self.Td_Tours" />
-          <EntitySet Name="Td_Story" EntityType="ThunderDuckModel.Td_Story" />
-          <EntitySet Name="Td_Images" EntityType="ThunderDuckModel.Td_Images" />
-          <EntitySet Name="Td_News" EntityType="ThunderDuckModel.Td_News" />
-        </EntityContainer>
-        <EntityType Name="Td_Story">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="Signature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="Td_Images">
+        <EntityType Name="Td_BrandMaker_Images">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -244,7 +275,16 @@
           <Property Name="images8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="Td_News">
+        <EntityType Name="Td_BrandMaker_Members">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Subtitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_BrandMaker_News">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -253,109 +293,167 @@
           <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="Td_BrandMaker_Slider">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Video" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Logo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_BrandMaker_Story">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Signature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_BrandMaker_ThunderDuckType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_BrandMaker_Tours">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_Construction_Construction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Images21" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_Construction_Contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HeadAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OfficeAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hotline" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_Construction_Member">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subtitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_Construction_New">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_Construction_Slider">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Logo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subtitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Images1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Images2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subtitle1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subtitle2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_Construction_Images">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Td_Constrution_Story">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Signature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="ThunderDuckModelStoreContainer" CdmEntityContainer="ThunderDuckEntities">
-          <EntitySetMapping Name="Td_AreaType">
-            <EntityTypeMapping TypeName="ThunderDuckModel.Td_AreaType">
-              <MappingFragment StoreEntitySet="Td_AreaType">
+          <EntitySetMapping Name="Td_BrandMaker_AreaType">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_BrandMaker_AreaType">
+              <MappingFragment StoreEntitySet="Td_BrandMaker_AreaType">
+                <ScalarProperty Name="Typer" ColumnName="Typer" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Area" ColumnName="Area" />
-                <ScalarProperty Name="Area1" ColumnName="Area1" />
-                <ScalarProperty Name="Area2" ColumnName="Area2" />
-                <ScalarProperty Name="Area3" ColumnName="Area3" />
-                <ScalarProperty Name="All" ColumnName="All" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Td_Contact">
-            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Contact">
-              <MappingFragment StoreEntitySet="Td_Contact">
+          <EntitySetMapping Name="Td_BrandMaker_Contact">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_BrandMaker_Contact">
+              <MappingFragment StoreEntitySet="Td_BrandMaker_Contact">
                 <ScalarProperty Name="Email2" ColumnName="Email2" />
                 <ScalarProperty Name="Email1" ColumnName="Email1" />
                 <ScalarProperty Name="Phone1" ColumnName="Phone1" />
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Hotline" ColumnName="Hotline" />
-                <ScalarProperty Name="Headaddress" ColumnName="Headaddress" />
                 <ScalarProperty Name="OfficeAddress" ColumnName="OfficeAddress" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Td_Events">
-            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Events">
-              <MappingFragment StoreEntitySet="Td_Events">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Images" ColumnName="Images" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Td_Members">
-            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Members">
-              <MappingFragment StoreEntitySet="Td_Members">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Images" ColumnName="Images" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Td_Slider">
-            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Slider">
-              <MappingFragment StoreEntitySet="Td_Slider">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="Video" ColumnName="Video" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Headaddress" ColumnName="Headaddress" />
+                <ScalarProperty Name="Hotline" ColumnName="Hotline" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Td_ThunderDuckType">
-            <EntityTypeMapping TypeName="ThunderDuckModel.Td_ThunderDuckType">
-              <MappingFragment StoreEntitySet="Td_ThunderDuckType">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Name1" ColumnName="Name1" />
-                <ScalarProperty Name="Name2" ColumnName="Name2" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Td_Tours">
-            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Tours">
-              <MappingFragment StoreEntitySet="Td_Tours">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+          <EntitySetMapping Name="Td_BrandMaker_Events">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_BrandMaker_Events">
+              <MappingFragment StoreEntitySet="Td_BrandMaker_Events">
+                <ScalarProperty Name="Images" ColumnName="Images" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Td_Story">
-            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Story">
-              <MappingFragment StoreEntitySet="Td_Story">
-                <ScalarProperty Name="Images" ColumnName="Images" />
-                <ScalarProperty Name="Signature" ColumnName="Signature" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Td_Images">
-            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Images">
-              <MappingFragment StoreEntitySet="Td_Images">
+          <EntitySetMapping Name="Td_BrandMaker_Images">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_BrandMaker_Images">
+              <MappingFragment StoreEntitySet="Td_BrandMaker_Images">
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="images8" ColumnName="images8" />
                 <ScalarProperty Name="images7" ColumnName="images7" />
@@ -369,11 +467,150 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Td_News">
-            <EntityTypeMapping TypeName="ThunderDuckModel.Td_News">
-              <MappingFragment StoreEntitySet="Td_News">
+          <EntitySetMapping Name="Td_BrandMaker_Members">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_BrandMaker_Members">
+              <MappingFragment StoreEntitySet="Td_BrandMaker_Members">
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_BrandMaker_News">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_BrandMaker_News">
+              <MappingFragment StoreEntitySet="Td_BrandMaker_News">
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_BrandMaker_Slider">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_BrandMaker_Slider">
+              <MappingFragment StoreEntitySet="Td_BrandMaker_Slider">
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Video" ColumnName="Video" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_BrandMaker_Story">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_BrandMaker_Story">
+              <MappingFragment StoreEntitySet="Td_BrandMaker_Story">
+                <ScalarProperty Name="Description1" ColumnName="Description1" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Signature" ColumnName="Signature" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_BrandMaker_ThunderDuckType">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_BrandMaker_ThunderDuckType">
+              <MappingFragment StoreEntitySet="Td_BrandMaker_ThunderDuckType">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_BrandMaker_Tours">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_BrandMaker_Tours">
+              <MappingFragment StoreEntitySet="Td_BrandMaker_Tours">
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_Construction_Construction">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Construction_Construction">
+              <MappingFragment StoreEntitySet="Td_Construction_Construction">
+                <ScalarProperty Name="Images21" ColumnName="Images21" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_Construction_Contact">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Construction_Contact">
+              <MappingFragment StoreEntitySet="Td_Construction_Contact">
+                <ScalarProperty Name="Hotline" ColumnName="Hotline" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email2" ColumnName="Email2" />
+                <ScalarProperty Name="Email1" ColumnName="Email1" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="OfficeAddress" ColumnName="OfficeAddress" />
+                <ScalarProperty Name="HeadAddress" ColumnName="HeadAddress" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_Construction_Member">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Construction_Member">
+              <MappingFragment StoreEntitySet="Td_Construction_Member">
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_Construction_New">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Construction_New">
+              <MappingFragment StoreEntitySet="Td_Construction_New">
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_Construction_Slider">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Construction_Slider">
+              <MappingFragment StoreEntitySet="Td_Construction_Slider">
+                <ScalarProperty Name="Subtitle2" ColumnName="Subtitle2" />
+                <ScalarProperty Name="Title2" ColumnName="Title2" />
+                <ScalarProperty Name="Subtitle1" ColumnName="Subtitle1" />
+                <ScalarProperty Name="Title1" ColumnName="Title1" />
+                <ScalarProperty Name="Images2" ColumnName="Images2" />
+                <ScalarProperty Name="Images1" ColumnName="Images1" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Subtitle" ColumnName="Subtitle" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_Construction_Images">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Construction_Images">
+              <MappingFragment StoreEntitySet="Td_Construction_Images">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Td_Constrution_Story">
+            <EntityTypeMapping TypeName="ThunderDuckModel.Td_Constrution_Story">
+              <MappingFragment StoreEntitySet="Td_Constrution_Story">
+                <ScalarProperty Name="Description1" ColumnName="Description1" />
+                <ScalarProperty Name="Images" ColumnName="Images" />
+                <ScalarProperty Name="Signature" ColumnName="Signature" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

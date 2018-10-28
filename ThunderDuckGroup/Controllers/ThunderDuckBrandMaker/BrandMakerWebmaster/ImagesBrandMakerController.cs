@@ -17,7 +17,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
             {
                 try
                 {
-                    var home = db.Td_Images.Where(st => st.id == 1);
+                    var home = db.Td_BrandMaker_Images.Where(st => st.id == 1);
                     return View(home);
                 }
                 catch (Exception ex)
@@ -140,7 +140,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
                     }
                 }
 
-                var home = db.Td_Images.Find(1);
+                var home = db.Td_BrandMaker_Images.Find(1);
                 home.Title = title;
                 if (images1 != "")
                 {

@@ -3,8 +3,8 @@
 @{ 
     ThunderDuckEntities db = new ThunderDuckEntities();
     HomeMaster home = new HomeMaster();
-    var sli = db.Td_Slider.Where(st => st.id == 1);
-    var con = db.Td_Contact.Where(st => st.id == 1);
+    var sli = db.Td_BrandMaker_Slider.Where(st => st.id == 1);
+    var con = db.Td_BrandMaker_Contact.Where(st => st.id == 1);
     home.sli = sli;
     home.con = con;
     List<HomeMaster> lst = new List<HomeMaster>();

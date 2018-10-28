@@ -1,4 +1,15 @@
-﻿<!doctype html>
+﻿@using ThunderDuckGroup.Models
+@{
+    ThunderDuckEntities db = new ThunderDuckEntities();
+    ConMaster home = new ConMaster();
+    var sli = db.Td_Construction_Slider.Where(st => st.id == 1);
+    var con = db.Td_Construction_Contact.Where(st => st.id == 1);
+    home.slie = sli;
+    home.conta = con;
+    List<ConMaster> lst = new List<ConMaster>();
+    lst.Add(home);
+}
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -70,8 +81,8 @@
                     <div class="row">
                         <div class="col-md-7 col-lg-8 col-sm-8">
                             <div class="call-to-action">
-                                <p><i class="fa fa-envelope-o"></i>Email: <a href="mailto:info@thunderduck.com.vn">info@thunderduck.com.vn</a></p>
-                                <p><i class="fa fa-phone"></i>Điện Thoại: <a href="tel:+840902417744">+84 961 404 441</a></p>
+                                <p><i class="fa fa-envelope-o"></i>Email: <a href="@lst.FirstOrDefault().slie.FirstOrDefault().Email">@lst.FirstOrDefault().slie.FirstOrDefault().Email</a></p>
+                                <p><i class="fa fa-phone"></i>Điện Thoại: <a href="@lst.FirstOrDefault().slie.FirstOrDefault().Phone">@lst.FirstOrDefault().slie.FirstOrDefault().Phone</a></p>
 
                             </div>
                         </div>
@@ -102,8 +113,8 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="../index.html" class="navbar-brand"><img src="~/Content/ThunderDuckConstruction/img/logo-main3.png" alt="logo"></a>
-                            <a href="../index.html" class="navbar-brand white"><img src="~/Content/ThunderDuckConstruction/img/logo-main3.png" alt="logo"></a>
+                            <a href="../index.html" class="navbar-brand"><img src="~/Images/ThunderDuckGroup/imageHome/@lst.FirstOrDefault().slie.FirstOrDefault().Logo" alt="logo"></a>
+                            <a href="../index.html" class="navbar-brand white"><img src="~/Images/ThunderDuckGroup/imageHome/@lst.FirstOrDefault().slie.FirstOrDefault().Logo"></a>
                         </div>
                         <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
                             <ul id="nav" class="nav navbar-nav">
@@ -130,16 +141,16 @@
             <div class="pogoSlider">
                 <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url(../../../Content/ThunderDuckConstruction/img/slider/slide_1.jpg) no-repeat scroll 0 0 / cover;">
 
-                    <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">Thunder Duck Costruction</h2>
-                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">Chúng tôi <span>Xây Dụng</span> Công trình của bạn</h1>
+                    <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">@lst.FirstOrDefault().slie.FirstOrDefault().Title</h2>
+                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">@lst.FirstOrDefault().slie.FirstOrDefault().Subtitle</h1>
                 </div>
                 <div class="pogoSlider-slide" data-transition="fade" style="background:url(../../../Content/ThunderDuckConstruction/img/slider/slide_2.jpg) no-repeat scroll 0 0 / cover;">
-                    <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">Chào mừng bạn đến với</h2>
-                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500"><span>Thunder Duck</span> Construction</h1>
+                    <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">@lst.FirstOrDefault().slie.FirstOrDefault().Title1</h2>
+                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">@lst.FirstOrDefault().slie.FirstOrDefault().Subtitle1</h1>
                 </div>
                 <div class="pogoSlider-slide" data-transition="fade" style="background:url(../../../Content/ThunderDuckConstruction/img/slider/slide_3.jpg) no-repeat scroll 0 0 / cover;">
-                    <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">Thunder Duck Design Office</h2>
-                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">Thiết kế <span>văn phòng</span> đa năng</h1>
+                    <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">@lst.FirstOrDefault().slie.FirstOrDefault().Title2</h2>
+                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">@lst.FirstOrDefault().slie.FirstOrDefault().Subtitle2</h1>
                 </div>
             </div>
         </div>
@@ -160,11 +171,11 @@
                         </div>
                         <div class="footer-address">
 
-                            <p>Trụ sở: Số 4, Nguyễn Đình Chiểu, Phường Đa Kao, Quận 1, Thành Phố Hồ Chí Minh</p>
-                            <p>Văn phòng giao dịch: Số 88, Song Hành, Phường An Phú, Quận 2, Thành Phố Hồ Chí Minh</p>
-                            <p>Email: <a href="mailto:admin@thunderduck.com.vn">admin@thunderduck.com.vn</a> - <a href="mailto:jasmine.doan@thunderduck.com.vn">jasmine.doan@thunderduck.com.vn</a> - <a href="mailto:lucynguyen@thunderduck.com.vn">lucynguyen@thunderduck.com.vn</a> - </p>
-                            <p>Điện Thoại: <a href="callto:+8402866507678">(+8428) 6650 7678</a> - <a href="callto:+840981406778">+84 981 406 778</a></p>
-                            <p>Hotline: <a href="callto:+840961404441">+84 961 404 441</a></p>
+                            <p>Trụ sở: @lst.FirstOrDefault().conta.FirstOrDefault().HeadAddress</p>
+                            <p>Văn phòng giao dịch: @lst.FirstOrDefault().conta.FirstOrDefault().OfficeAddress</p>
+                            <p>Email: <a href="@lst.FirstOrDefault().conta.FirstOrDefault().Email">@lst.FirstOrDefault().conta.FirstOrDefault().Email</a> - <a href="@lst.FirstOrDefault().conta.FirstOrDefault().Email1">@lst.FirstOrDefault().conta.FirstOrDefault().Email1</a> - <a href="@lst.FirstOrDefault().conta.FirstOrDefault().Email2">@lst.FirstOrDefault().conta.FirstOrDefault().Email2</a> - </p>
+                            <p>Điện Thoại: <a href="@lst.FirstOrDefault().conta.FirstOrDefault().Phone">@lst.FirstOrDefault().conta.FirstOrDefault().Phone</a> - <a href="@lst.FirstOrDefault().conta.FirstOrDefault().Phone1">@lst.FirstOrDefault().conta.FirstOrDefault().Phone1</a></p>
+                            <p>Hotline: <a href="@lst.FirstOrDefault().conta.FirstOrDefault().Hotline">@lst.FirstOrDefault().conta.FirstOrDefault().Hotline</a></p>
                         </div>
                         <div class="footer-social-bookmark">
                             <ul>

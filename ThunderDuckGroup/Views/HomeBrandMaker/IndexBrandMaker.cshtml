@@ -5,33 +5,27 @@
 }
 
 <!--ABOUT AREA-->
-<section class="about-area section-padding" id="about">
+<section class="about-area section-padding" id="about"  style="background: url(../../Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().sto.FirstOrDefault().Images">
     <div class="container wow fadeIn">
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <div class="area-title text-center">
-                    <h2>Câu chuyện của chúng tôi</h2>
+                    <h2>@Model.FirstOrDefault().sto.FirstOrDefault().Title</h2>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                 <div class="about-content">
-                    <p><span class="big-text">H</span>ai con người cùng chung một chí hướng và đam mê, một người xây nhà một người tô điểm thêm nhiều sắc màu cho ngôi nhà chung mang tên THUNDER DUCK - CHÚ VỊT SẤM SÉT. Đó là câu chuyện về một ngày trời nắng gắt, bỗng trở nên dịu dàng hơn với vầng mây trôi ngang trên đầu hai cô gái, bất thình lình từ trong đám mây những tiếng SẤM vang trời như muốn xé toạt màn mây đánh dấu những tia SÉT đầy năng lượng và ánh sáng mở </p>
+                    <p>@Model.FirstOrDefault().sto.FirstOrDefault().Description </p>
                 </div>
             </div>
             <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                 <div class="right-about-content">
-                    <p>
-                        lối cho hai cô gái bước vào hành trình cuộc đời, những ngã rẽ của sự nghiệp chỉ với 2 cô gái cho 3 ngành nghề :<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 1. Tư Vấn Thiết Kế, Thi Công Xây Dựng<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2. Events - Marketing<br>
-                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 3. Sản Xuất -  Nhập Khẩu - Phân Phối Hoá Mỹ Phẩm<br>
-                        CHÚ VỊT SẤM SÉT - THUNDER DUCK GROUP
-                    </p>
+                    <p>@Model.FirstOrDefault().sto.FirstOrDefault().Description1</p>
                 </div>
             </div>
             <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
                 <div class="about-author-sign text-center">
-                    <img src="~/Content/ThunderDuckBrandMaker/img/about/signature.png" alt="">
+                    <img src="/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().sto.FirstOrDefault().Signature" alt="">
                 </div>
             </div>
         </div>
@@ -51,29 +45,19 @@
         </div>
         <div class="row">
             <div class="menu-discount-offer col-md-12 col-lg-12 col-sm-12 col-xs-12">
-
-                <div class="single-promotions">
-                    <div class="promotions-img">
-                        <img src="~/Content/ThunderDuckBrandMaker/img/promotions/sin-malay.png" alt="">
+                @foreach (var item in Model.FirstOrDefault().tou)
+                {
+                    <div class="single-promotions">
+                        <div class="promotions-img">
+                            <img src="/Images/ThunderDuckGroup/imageHome/@item.Images" alt="">
+                        </div>
+                        <div class="promotions-details">
+                            <h3>@item.Title</h3>
+                            <p>@item.Description</p>
+                            <a href="singapore-malaysia.html" class="read-more">@item.Price</a>
+                        </div>
                     </div>
-                    <div class="promotions-details">
-                        <h3>SINGAPORE - MALAYSIA</h3>
-                        <p>Thưởng lãm những thắng cảnh nổi tiếng của cả 2 quốc gia: Singapore - Malaysia</p>
-                        <a href="singapore-malaysia.html" class="read-more">8.390.000đ/người</a>
-                    </div>
-                </div>
-
-                <div class="single-promotions">
-                    <div class="promotions-img">
-                        <img src="~/Content/ThunderDuckBrandMaker/img/promotions/bangkok-pattaya.jpg" alt="">
-                    </div>
-                    <div class="promotions-details">
-                        <h3>BANGKOK - PATTAYA</h3>
-                        <p>Thưởng lãm những thắng cảnh nổi tiếng của Thailand</p>
-                        <a href="#" class="read-more">6.590.000đ/Tour</a>
-                    </div>
-                </div>
-
+                }
             </div>
         </div>
     </div>

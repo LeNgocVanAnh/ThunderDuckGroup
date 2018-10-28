@@ -667,8 +667,8 @@ a.search-form-trigger::before {
 
 .about-area {
     
-    background: rgba(0, 0, 0, 0) url("img/about/home-about.png") no-repeat scroll center bottom / contain;
-    position: relative;
+    /*background: rgba(0, 0, 0, 0) url("img/about/home-about.png") no-repeat scroll center bottom / contain;
+    position: relative;*/
 }
 
 .about-area::after,

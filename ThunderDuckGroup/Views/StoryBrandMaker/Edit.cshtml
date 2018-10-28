@@ -1,7 +1,7 @@
-﻿@model IQueryable<ThunderDuckGroup.Models.Td_Story>
+﻿@model IQueryable<ThunderDuckGroup.Models.Td_BrandMaker_Story>
 @{
     ViewBag.Title = "Edit";
-    Layout = "~/Views/Shared/_LayoutWebmaster.cshtml";
+    Layout = "~/Views/Shared/ThunderDuckBrandMaker/_LayoutWebmaster.cshtml";
     string[] arrStr;
 }
 
@@ -56,7 +56,7 @@
                                     else
                                     {
                                         <div class="form-group">
-                                            <label for="exampleFormControlFile1">Chữ kí (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                            <label for="exampleFormControlFile1">Hình ảnh (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
                                             <br />
                                             <input type="file" name="images" accept="image/*" multiple="multiple" />
                                             <img src="~/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().Images" style="width:100%" />
@@ -72,13 +72,23 @@
                                     </div>
                                 }
                                 <div class="form-group">
-                                    <label for="exampleFormControlInput4">Trụ sở chính (VUI LÒNG NHẬP DƯỚI 300 KÍ TỰ)</label>
+                                    <label for="exampleFormControlInput4">Tiêu đề (VUI LÒNG NHẬP DƯỚI 100 KÍ TỰ)</label>
                                     <input type="text" class="form-control" placeholder="" name="title" value="@Model.FirstOrDefault().Title">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlInput4">Văn phòng giao dịch (VUI LÒNG NHẬP DƯỚI 300 KÍ TỰ)</label>
-                                    <textarea name="des" class="form-control" maxlength="1000" rows="20" cols="50" style="height: 200px">@Model.FirstOrDefault().Description</textarea>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput4">Nội dung (VUI LÒNG NHẬP DƯỚI 500 KÍ TỰ)</label>
+                                            <textarea name="des" class="form-control" maxlength="1000" rows="20" cols="50" style="height: 200px">@Model.FirstOrDefault().Description</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput4">Nội dung 1 (VUI LÒNG NHẬP DƯỚI 500 KÍ TỰ)</label>
+                                            <textarea name="des1" class="form-control" maxlength="1000" rows="20" cols="50" style="height: 200px">@Model.FirstOrDefault().Description1</textarea>
+                                        </div>
+                                    </div>
                                 </div>
 
                                 @if (Model.FirstOrDefault().Signature != null)

@@ -1,0 +1,254 @@
+﻿@model IQueryable<ThunderDuckGroup.Models.Td_Construction_Slider>
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/ThunderDuckConstruction/_LayoutWebmaster.cshtml";
+    string[] arrStr;
+}
+
+<div class="main-wrapper">
+    <div class="container">
+
+        <!-- Start breadcrumb section  -->
+        <div class="row">
+            <div class="col-lg-12">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/webmaster/index">Trang chủ</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Chỉnh sửa trang chủ</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Start form -->
+        <div class="form-area">
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="single-form">
+                        <div class="section-head">
+                            <div class="title">
+                                <h4>Chỉnh sửa Slider</h4>
+                            </div>
+                        </div>
+
+                        <div class="section-body">
+                            <form action="/homepageconstruction/edit" method="post" enctype="multipart/form-data">
+
+                                @if (Model.FirstOrDefault().Logo != null)
+                                {
+                                    if (Model.FirstOrDefault().Logo.Contains(","))
+                                    {
+                                        arrStr = Model.FirstOrDefault().Logo.Split(',');
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Thay đổi hình Logo (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                            <br />
+                                            <input type="file" name="logo" accept="image/*" multiple="multiple" />
+                                            <div class="row">
+                                                @foreach (var logo in arrStr)
+                                                {
+
+                                                    <div class="col-sm-3 bg-slider" style="background: url('../../Images/ThunderDuckGroup/imageHome/@logo') center center no-repeat / cover;">
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Thay đổi hình logo (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                            <br />
+                                            <input type="file" name="logo" accept="image/*" multiple="multiple" />
+                                            <div class="row">
+                                                <div class="col-sm-3 bg-slider" style="background: url('../../Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().Logo') center center no-repeat / cover;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Thay đổi hình logo (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                        <br />
+                                        <input type="file" name="logo" accept="image/*" multiple="multiple" />
+                                    </div>
+                                }
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput4">Email (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
+                                    <input type="text" class="form-control" placeholder="" name="email" value="@Model.FirstOrDefault().Email">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput4">Phone (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
+                                    <input type="text" class="form-control" placeholder="" name="phone" value="@Model.FirstOrDefault().Phone">
+                                </div>
+                                @if (Model.FirstOrDefault().Images != null)
+                                {
+                                    if (Model.FirstOrDefault().Images.Contains(","))
+                                    {
+                                        arrStr = Model.FirstOrDefault().Images.Split(',');
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Hình ảnh 1 (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                            <br />
+                                            <input type="file" name="Images" accept="image/*" multiple="multiple" />
+                                            <div class="row">
+                                                @foreach (var img in arrStr)
+                                                {
+
+                                                    <div class="col-sm-3 bg-slider" style="background: url('../../Images/ThunderDuckGroup/imageHome/@img') center center no-repeat / cover;">
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Hình ảnh  (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                            <br />
+                                            <input type="file" name="Images" accept="image/*" multiple="multiple" />
+                                            <img src="~/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().Images" style="width:100%" />
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Hình ảnh 2 (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                        <br />
+                                        <input type="file" name="Images" accept="image/*" multiple="multiple" />
+                                    </div>
+                                }
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput4">Tiêu đề 1 (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
+                                    <input type="text" class="form-control" placeholder="" name="title" value="@Model.FirstOrDefault().Title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput4">Nội dung 1 (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
+                                    <input type="text" class="form-control" placeholder="" name="subtitle" value="@Model.FirstOrDefault().Subtitle">
+                                </div>
+
+                                @if (Model.FirstOrDefault().Images1 != null)
+                                {
+                                    if (Model.FirstOrDefault().Images1.Contains(","))
+                                    {
+                                        arrStr = Model.FirstOrDefault().Images1.Split(',');
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Hình ảnh 2 (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                            <br />
+                                            <input type="file" name="Images1" accept="image/*" multiple="multiple" />
+                                            <div class="row">
+                                                @foreach (var img in arrStr)
+                                                {
+
+                                                    <div class="col-sm-3 bg-slider" style="background: url('../../Images/ThunderDuckGroup/imageHome/@img') center center no-repeat / cover;">
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Hình ảnh  (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                            <br />
+                                            <input type="file" name="Images1" accept="image/*" multiple="multiple" />
+                                            <img src="~/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().Images1" style="width:100%" />
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Hình ảnh 2 (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                        <br />
+                                        <input type="file" name="Images1" accept="image/*" multiple="multiple" />
+                                    </div>
+                                }
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput4">Tiêu đề 2 (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
+                                    <input type="text" class="form-control" placeholder="" name="title1" value="@Model.FirstOrDefault().Title1">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput4">Nội dung 2 (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
+                                    <input type="text" class="form-control" placeholder="" name="subtitle1" value="@Model.FirstOrDefault().Subtitle1">
+                                </div>
+
+                                @if (Model.FirstOrDefault().Images2 != null)
+                                {
+                                    if (Model.FirstOrDefault().Images2.Contains(","))
+                                    {
+                                        arrStr = Model.FirstOrDefault().Images2.Split(',');
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Hình ảnh 3 (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                            <br />
+                                            <input type="file" name="Images2" accept="image/*" multiple="multiple" />
+                                            <div class="row">
+                                                @foreach (var img in arrStr)
+                                                {
+
+                                                    <div class="col-sm-3 bg-slider" style="background: url('../../Images/ThunderDuckGroup/imageHome/@img') center center no-repeat / cover;">
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Hình ảnh 3 (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                            <br />
+                                            <input type="file" name="Images2" accept="image/*" multiple="multiple" />
+                                            <img src="~/Images/ThunderDuckGroup/imageHome/@Model.FirstOrDefault().Images2" style="width:100%" />
+                                        </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Hình ảnh 3 (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
+                                        <br />
+                                        <input type="file" name="Images1" accept="image/*" multiple="multiple" />
+                                    </div>
+                                }
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput4">Tiêu đề 3 (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
+                                    <input type="text" class="form-control" placeholder="" name="title2" value="@Model.FirstOrDefault().Title2">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput4">Nội dung 3 (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
+                                    <input type="text" class="form-control" placeholder="" name="subtitle2" value="@Model.FirstOrDefault().Subtitle2">
+                                </div>
+                                <input class="btn btn-primaryt" type="submit" value="Lưu" />
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $("input[type='submit']").click(function () {
+            var $fileUpload = $("input[type='file']");
+            if (parseInt($fileUpload.get(0).files.length) > 3) {
+                alert("Bạn chỉ được Upload tối đa 8 tấm hình");
+            }
+        });
+    })
+</script>
+
+
+

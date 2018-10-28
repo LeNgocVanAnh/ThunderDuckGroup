@@ -15,7 +15,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
         {
             if(Session["Authentication"] != null)
             {
-                var home = db.Td_Slider.Where(st => st.id == 1);
+                var home = db.Td_BrandMaker_Slider.Where(st => st.id == 1);
                 return View(home);
             }
             else
@@ -51,7 +51,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
                         Images = Images.Remove(Images.Length - 1);
                     }
                 }
-                var home = db.Td_Slider.Find(1);
+                var home = db.Td_BrandMaker_Slider.Find(1);
                 home.Email = email;
                 home.Phone = phone;
                 if(Images != null)

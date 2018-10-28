@@ -15,7 +15,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
         {
             if(Session["Authentication"] != null)
             {
-                var home = db.Td_Story.Where(st => st.id == 1);
+                var home = db.Td_BrandMaker_Story.Where(st => st.id == 1);
                 return View(home);
             }
             else
@@ -25,7 +25,7 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
         }
 
         [HttpPost]
-        public ActionResult Edit(string title, string des, HttpPostedFileBase images, HttpPostedFileBase sign)
+        public ActionResult Edit(string title, string des, string des1, HttpPostedFileBase images, HttpPostedFileBase sign)
         {
             if (Session["Authentication"] != null)
             {
@@ -55,10 +55,10 @@ namespace ThunderDuckGroup.Controllers.ThunderDuckBrandMaker.BrandMakerWebmaster
                     }
                 }
 
-                var st = db.Td_Story.Find(1);
+                var st = db.Td_BrandMaker_Story.Find(1);
                 st.Title = title;
                 st.Description = des;
-
+                st.Description1 = des1;
                 if (Images != "")
                 {
                     st.Images = Images;
